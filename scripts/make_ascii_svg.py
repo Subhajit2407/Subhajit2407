@@ -25,7 +25,11 @@ def build(static=False):
     gray = ImageEnhance.Contrast(gray).enhance(1.2)
     gray = Image.composite(gray,Image.new('L',image.size,255),mask)
     grid = gray.resize((88,59),Image.Resampling.LANCZOS)
-    rows = [''.join(RAMP[min(len(RAMP)-1,round((255-grid.getpixel((x,y)))/255*(len(RAMP)-1)))] for x in range(88)) for y in range(59)]
+    alpha = mask.resize((88,59),Image.Resampling.LANCZOS)
+    # Positive luminance reads naturally on a dark terminal: skin stays bright.
+    rows = [''.join(' ' if alpha.getpixel((x,y)) < 110 else
+                    RAMP[max(1,min(len(RAMP)-1,round(grid.getpixel((x,y))/255*(len(RAMP)-1))))]
+                    for x in range(88)) for y in range(59)]
     out=['<svg xmlns="http://www.w3.org/2000/svg" width="370" height="390" viewBox="0 0 370 390" role="img" aria-labelledby="t d">',
         '<title id="t">Subhajit Talukder — ASCII portrait</title><desc id="d">A monochrome ASCII rendering of Subhajit’s supplied portrait, typed row by row.</desc>',
         '<style>text{font-family:Consolas,Menlo,monospace}.cursor{fill:#7ee787}@media(prefers-reduced-motion:reduce){.ascii-row{clip-path:none}}</style>',
