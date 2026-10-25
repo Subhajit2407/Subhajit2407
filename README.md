@@ -10,7 +10,7 @@
 
 <img align="right" src="assets/illustrations/developer.svg" width="35%" alt="Animated developer at a cyan and violet terminal workstation" />
 
-- 🧑‍💻 I enjoy turning ideas into interactive web experiences.
+- 🧑‍💻 I'm a B.Tech student at Jain University, building interactive web experiences.
 - 🎨 My focus is **frontend development**, creative interfaces, and motion.
 - ⚛️ My projects use **React, TypeScript, Next.js, Vite, and Tailwind CSS**.
 - 🛠️ I build product interfaces, from a resume builder to a housing search experience.
@@ -22,6 +22,8 @@
 <p align="right"><b>🌐 Connect with me</b></p>
 <p align="right">
   <a href="https://www.linkedin.com/in/subhajit-talukder-b73bb229b/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn" /></a>
+  <a href="https://subhajitdeveloper24.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&amp;logo=vercel&amp;logoColor=white" alt="Portfolio" /></a>
+  <a href="mailto:subhajitbtechinternship24@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Email" /></a>
   <a href="https://github.com/Subhajit2407"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub" /></a>
 </p>
 
@@ -64,6 +66,19 @@
 
 <h3 align="center">🌟 Featured Projects</h3>
 
+### MILES — Driving Education
+
+A driving-education website customized for **Guwahati, Assam**, with a course finder, interactive driving journey, and responsive interfaces.
+
+`React` · `TypeScript` · `Vite` · `Tailwind CSS` · `Vitest`  
+<sub>Source repository is private.</sub>
+
+### [Personal Portfolio](https://subhajitdeveloper24.vercel.app/)
+
+My interactive portfolio with project showcases, motion, a scroll-linked journey, and a design playground.
+
+`React` · `TypeScript` · `Vite` · `Tailwind CSS` · `Framer Motion`
+
 ### [CVita — Resume Builder](https://github.com/Subhajit2407/CVita-Resume)
 
 A resume-building web application with editable sections, template selection, live previews, and PDF export.
@@ -75,12 +90,6 @@ A resume-building web application with editable sections, template selection, li
 A Bengaluru housing discovery interface with searches by locality, budget, and room type, built for finding PGs, flats, and coliving homes.
 
 `Next.js` · `React` · `TypeScript` · `Tailwind CSS`
-
-### [Novus — Developer Community](https://github.com/Subhajit2407/novus-glow-section)
-
-A developer-community website with animated sections, project showcases, and a student-led collaboration theme.
-
-`React` · `TypeScript` · `Vite` · `Tailwind CSS`
 
 <p align="center"><a href="https://github.com/Subhajit2407?tab=repositories">Explore my repositories →</a></p>
 
