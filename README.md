@@ -10,7 +10,7 @@
 
 <table>
 <tr>
-<td width="41%" valign="top"><img src="./subhajit-ascii.svg" width="370" alt="Subhajit Talukder's GitHub portrait rendered as self-typing monochrome ASCII art" /></td>
+<td width="41%" valign="top"><img src="./subhajit-ascii.svg" width="370" alt="Subhajit Talukder's supplied portrait rendered as self-typing monochrome ASCII art" /></td>
 <td width="59%" valign="top"><img src="./info-card.svg" width="530" alt="Animated terminal profile: B.Tech student at Jain University; frontend and interactive UI engineering; React, TypeScript, Next.js, Tailwind CSS, shadcn/ui, Framer Motion, Vite, Git, and GitHub" /></td>
 </tr>
 </table>
@@ -23,12 +23,12 @@
 
 </div>
 
-| Project | What I'm building | Stack / Link |
+| Project | What I'm building | Link |
 | :--- | :--- | :--- |
-| **MILES** | A driving-education website for Guwahati, Assam, with a course finder and interactive driving journey. | React · TypeScript · Vite · Tailwind CSS · Vitest<br /><sub>Private source</sub> |
-| **Personal Portfolio** | Interactive project showcases, a scroll-linked journey, and a design playground. | React · TypeScript · Tailwind CSS · Framer Motion<br />[Visit portfolio ↗](https://subhajitdeveloper24.vercel.app/) |
-| **CVita** | A resume builder with editable sections, template selection, live previews, and PDF export. | React · TypeScript · Vite · Tailwind CSS<br />[View repository ↗](https://github.com/Subhajit2407/CVita-Resume) |
-| **Homie** | A Bengaluru housing discovery interface with locality, budget, and room-type filters. | Next.js · React · TypeScript · Tailwind CSS<br />[View repository ↗](https://github.com/Subhajit2407/homie) |
+| **Miles** | A driving-education website for Guwahati, Assam, with a course finder and interactive driving journey. | <sub>Private source</sub> |
+| **Cointervues** | Interview preparation and learning through expert-led mock interviews, mentoring, and structured feedback. | [Visit Cointervues ↗](https://cointervues-five.vercel.app/) |
+| **Nexio** | A platform for student builders to find teammates, collaborate on shared projects, and showcase contributions. | [Visit Nexio ↗](https://www.thenexio.in/) |
+| **Sathiyo** | A social travel platform for finding companions, planning shared itineraries, and coordinating group trips. | [Visit Sathiyo ↗](https://sathiyo-sih.vercel.app/) |
 
 <div align="center">
 

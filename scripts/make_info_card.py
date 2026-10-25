@@ -13,7 +13,7 @@ def render(static=False):
         ('Stack', 'React · TypeScript · Next.js'),
         ('UI', 'Tailwind CSS · shadcn/ui · Framer Motion'),
         ('Tools', 'Vite · Git · GitHub'),
-        ('Projects', 'MILES · Portfolio · CVita · Homie'),
+        ('Projects', 'Miles · Cointervues · Nexio · Sathiyo'),
         ('Web', 'subhajitdeveloper24.vercel.app'),
     ]
     out=['<svg xmlns="http://www.w3.org/2000/svg" width="530" height="390" viewBox="0 0 530 390" role="img" aria-labelledby="t d">',
