@@ -1,0 +1,2 @@
+# Needed only to regenerate the ASCII portrait locally.
+Pillow>=10,<13

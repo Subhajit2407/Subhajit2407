@@ -1,9 +1,10 @@
-name: Refresh profile visuals
+name: Refresh animated profile
 on:
   push:
     branches: [main]
     paths:
-      - 'scripts/profile_stats.py'
+      - 'scripts/fetch_contributions.py'
+      - 'scripts/render_heatmap_svg.py'
       - '.github/workflows/profile.yml'
   schedule:
     - cron: '30 1 * * *'
@@ -21,16 +22,16 @@ jobs:
     steps:
       - name: Check out profile repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - name: Generate cards from GitHub data
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/profile_stats.py
-      - name: Commit updated graphics
+      - name: Fetch public calendar without a personal token
+        run: python3 scripts/fetch_contributions.py
+      - name: Render animated contribution heatmap
+        run: python3 scripts/render_heatmap_svg.py
+      - name: Commit refreshed public data and SVG
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/stats/*.svg profile-3d-contrib/*.svg
+          git add data/contributions.json contrib-heatmap.svg
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Refresh GitHub profile statistics'
+          git commit -m 'Refresh animated contribution calendar [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
