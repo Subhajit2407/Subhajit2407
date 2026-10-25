@@ -26,7 +26,7 @@
 | Project | What I'm building | Link |
 | :--- | :--- | :--- |
 | **Miles** | A driving-education website for Guwahati, Assam, with a course finder and interactive driving journey. | <sub>Private source</sub> |
-| **Cointervues** | Interview preparation and learning through expert-led mock interviews, mentoring, and structured feedback. | [Visit Cointervues ↗](https://cointervues-five.vercel.app/) |
+| **Cointervues** | Interview preparation and learning through expert-led mock interviews, mentoring, and structured feedback. | <sub>Private source</sub> |
 | **Nexio** | A platform for student builders to find teammates, collaborate on shared projects, and showcase contributions. | [Visit Nexio ↗](https://www.thenexio.in/) |
 | **Sathiyo** | A social travel platform for finding companions, planning shared itineraries, and coordinating group trips. | [Visit Sathiyo ↗](https://sathiyo-sih.vercel.app/) |
 
