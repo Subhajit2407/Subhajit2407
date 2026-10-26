@@ -1,12 +1,13 @@
-"""Generate reusable black-and-green README panels from checked profile facts."""
+"""Generate reusable navy star-field README panels from checked profile facts."""
 from html import escape
+from visual_theme import starfield, BG, PANEL, BORDER
 import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets';OUT.mkdir(exist_ok=True)
 ICONS=json.loads((ROOT/'data/tech-icons.json').read_text())
 DATA=json.loads((ROOT/'data/dashboard.json').read_text())
-BG='#0D1117';PANEL='#161B22';BORDER='#30363D';TEXT='#E6EDF3';MUTED='#8B949E';GREEN='#39D353'
+TEXT='#E6EDF3';MUTED='#8B949E';GREEN='#39D353'
 
 def t(x,y,s,size=13,fill=TEXT,weight='normal',spacing=0):
     return f'<text x="{x}" y="{y}" font-size="{size}" fill="{fill}" font-weight="{weight}" letter-spacing="{spacing}">{escape(str(s))}</text>'
@@ -15,11 +16,11 @@ def rect(x,y,w,h,fill=PANEL,rx=7):
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{BORDER}"/>'
 
 def svg(w,h,title,body):
-    return f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>{escape(title)}</title><style>text{{font-family:JetBrains Mono,Consolas,monospace}}</style>'+rect(.5,.5,w-1,h-1,BG,12)+body+'</svg>\n'
+    return f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>{escape(title)}</title><style>text{{font-family:JetBrains Mono,Consolas,monospace}}</style>'+starfield(w,h)+body+'</svg>\n'
 
 def icon(slug,x,y,size=25):
     if slug in ICONS:
-        return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24"><path fill="{GREEN}" d="{ICONS[slug]["path"]}"/></svg>'
+        return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24"><path fill="{ICONS[slug].get("color",GREEN)}" d="{ICONS[slug]["path"]}"/></svg>'
     shapes={
       'database':'M3 6c0-5 18-5 18 0v12c0 5-18 5-18 0zm0 0c0 5 18 5 18 0M3 12c0 5 18 5 18 0',
       'api':'M8 5 1 12l7 7M16 5l7 7-7 7M14 3l-4 18',
@@ -30,8 +31,10 @@ def icon(slug,x,y,size=25):
       'terminal':'m3 5 7 7-7 7M13 19h8',
       'box':'m12 2 10 5v10l-10 5-10-5V7zm0 10v10M2 7l10 5 10-5',
     }
+    semantic_colors={'database':'#54B4E8','api':'#FFB454','auth':'#C49BFF','network':'#65D9D1','brain':'#BD9AFF','terminal':'#F6C66C','box':'#8FC9FF'}
+    color=semantic_colors.get(slug,'#8FC9FF')
     path=shapes.get(slug,shapes['api'])
-    return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24"><path d="{path}" fill="none" stroke="{GREEN}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>'
+    return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24"><path d="{path}" fill="none" stroke="{color}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>'
 
 def banner():
     b=''

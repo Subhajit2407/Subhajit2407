@@ -7,6 +7,7 @@ on:
       - 'scripts/render_heatmap_svg.py'
       - 'scripts/generate_skyline.py'
       - 'scripts/generate_dashboard.py'
+      - 'scripts/visual_theme.py'
       - 'data/dashboard.json'
       - 'data/tech-icons.json'
       - '.github/workflows/profile.yml'

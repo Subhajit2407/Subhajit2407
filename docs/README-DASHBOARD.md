@@ -6,7 +6,7 @@ The public README uses self-contained SVGs. It runs no JavaScript and depends on
 
 - `data/dashboard.json`: profile facts and project descriptions, checked against the supplied resume and existing project sources. Update these facts before regenerating panels.
 - `data/tech-icons.json`: authentic Simple Icons paths (CC0-1.0); semantic API, network, authentication and engineering icons are original line art.
-- `scripts/generate_dashboard.py`: generates the hero, engineering information, stack, project and impact cards. The original ASCII character strings are copied intact from subhajit-ascii.svg with only the green accent adjusted.
+- `scripts/generate_dashboard.py`: generates the hero, engineering information, stack, project and impact cards. The current animated avatar portrait is copied from subhajit-ascii.svg; regenerate that file with scripts/make_ascii_svg.py when the source avatar changes.
 - `scripts/fetch_contributions.py`: retrieves and validates public contribution dates/counts without a personal token.
 - `scripts/generate_skyline.py`: exports the README animation and a static fallback from data/contributions.json. It ports the supplied component's camera, easing, week/day positioning, tower-height and staggered-wave formulas. Every cell remains the same polygon during the 2D-to-3D morph. An unsupported animation engine shows the base 3D geometry; reduced-motion users receive a separate static SVG through picture/source.
 
@@ -42,3 +42,7 @@ The skyline covers the dates returned by GitHub's public calendar. It can differ
 Nexio links to its verified public application and Cogniview to its public repository. Cointervues and Miles remain without public source links. The prior removal of Cointervues' public deployment link is preserved. Project visibility, code, and deployment configuration are unchanged.
 
 Professional skills and impact figures are supported by the user's resume; the source resume and phone number are not copied into this repository. No account security or repository permissions were changed.
+
+## Navy theme update
+
+The profile panels now use a shared navy star-field theme from scripts/visual_theme.py. Technology logos use their official brand colors with light variants for dark wordmarks. The ASCII portrait is regenerated from the user-supplied anime avatar, excluding its yellow backdrop. GitHub controls the surrounding page background; the theme applies to embedded README panels.

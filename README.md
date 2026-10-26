@@ -11,7 +11,7 @@
 <h3 align="center">Engineering Profile</h3>
 
 <p align="center">
-<img src="./assets/portrait.svg" width="332" alt="Self-typing monochrome ASCII portrait of Subhajit Talukder, with recognizable hair, facial features, shoulders, and clothing" />
+<img src="./assets/portrait.svg" width="332" alt="Self-typing dotted ASCII portrait generated from Subhajit’s anime profile avatar, on a navy star-field background" />
 <img src="./assets/neofetch.svg" width="476" alt="Subhajit Talukder — Software Development Engineer; Backend, Full Stack, AI; B.Tech at JAIN University, 2027; APIs, databases, AI, system design, testing, and performance" />
 </p>
 

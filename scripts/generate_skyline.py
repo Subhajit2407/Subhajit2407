@@ -3,6 +3,7 @@ SVG SMIL interpolates the same polygons; README rendering needs no JavaScript.
 """
 from datetime import date, timedelta
 from html import escape
+from visual_theme import starfield
 import json, math
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -47,7 +48,7 @@ def render(data,animated=True):
          '<title id="t">Subhajit2407 — contribution skyline</title>',
          '<desc id="d">Real public contribution days morph from a flat heatmap into an isometric skyline. Tower heights encode counts; summary statistics follow below.</desc>',
          '<style>text{font-family:JetBrains Mono,Consolas,monospace}</style>',
-         '<rect x=".5" y=".5" width="1099" height="549" rx="14" fill="#0D1117" stroke="#30363D"/>',
+         starfield(1100,550,'skyline'),
          '<path d="M1 49h1098" stroke="#30363D"/>',txt(24,31,'// CONTRIBUTION SKYLINE',17,'#E6EDF3','bold'),
          txt(788,30,'2D → 3D / PUBLIC DATA',12,'#39D353'),txt(24,75,f'{data["from"]} → {data["to"]}   ·   Height = daily contribution count',11)]
     cells.sort(key=lambda c:(c['week']+c['day'],c['week']))

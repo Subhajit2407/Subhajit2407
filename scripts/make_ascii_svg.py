@@ -1,7 +1,8 @@
-"""Make a monochrome, self-typing SVG from the user's supplied studio portrait.
+"""Make a monochrome, self-typing SVG from the user's supplied anime profile avatar.
 Only local regeneration needs Pillow; daily updates never install image libraries.
 """
 from html import escape
+from visual_theme import starfield
 import os
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
@@ -10,17 +11,18 @@ RAMP = ' .`:-=+*cs#%@'
 
 def build(static=False):
     image = Image.open(ROOT/'assets/portrait-source.png').convert('RGB')
-    # Tight, undistorted head-and-shoulders crop for the supplied studio portrait.
+    # Retain the supplied avatar's full hairstyle and hoodie proportions.
     w, h = image.size
-    image = image.crop((0, round(h*.245), w, round(h*.245+w*.96)))
-    # Remove only the flat background connected to the border, preserving facial detail.
-    sample = image.getpixel((0,0))
-    candidate = Image.new('L', image.size)
-    candidate.putdata([0 if max(abs(c-s) for c,s in zip(pixel,sample)) < 42 else 255
-                       for pixel in image.getdata()])
-    ImageDraw.floodfill(candidate,(0,0),128)
-    mask = candidate.point(lambda p: 0 if p == 128 else 255)
-    mask = mask.filter(ImageFilter.GaussianBlur(.65))
+    image = image.crop((0,0,w,min(h,round(w*.96))))
+    mask = Image.new('L',image.size)
+    # The avatar's yellow backdrop is excluded from the character portrait.
+    pixels=list(image.getdata())
+    mask.putdata([0 if r>150 and g>125 and b<130 and g/max(r,1)>.78 else 255
+                  for r,g,b in pixels])
+    # Keep the connected avatar, excluding isolated backdrop lettering and rays.
+    ImageDraw.floodfill(mask,(round(image.width*.52),round(image.height*.60)),128)
+    mask=mask.point(lambda p:255 if p==128 else 0)
+    mask=mask.filter(ImageFilter.GaussianBlur(.6))
     gray = ImageOps.autocontrast(image.convert('L'),cutoff=1)
     gray = ImageEnhance.Contrast(gray).enhance(1.2)
     gray = Image.composite(gray,Image.new('L',image.size,255),mask)
@@ -31,9 +33,9 @@ def build(static=False):
                     RAMP[max(1,min(len(RAMP)-1,round(grid.getpixel((x,y))/255*(len(RAMP)-1))))]
                     for x in range(88)) for y in range(59)]
     out=['<svg xmlns="http://www.w3.org/2000/svg" width="370" height="390" viewBox="0 0 370 390" role="img" aria-labelledby="t d">',
-        '<title id="t">Subhajit Talukder — ASCII portrait</title><desc id="d">A monochrome ASCII rendering of Subhajit’s supplied portrait, typed row by row.</desc>',
+        '<title id="t">Subhajit Talukder — ASCII portrait</title><desc id="d">A monochrome ASCII rendering of Subhajit’s supplied anime profile avatar, typed row by row.</desc>',
         '<style>text{font-family:Consolas,Menlo,monospace}.cursor{fill:#7ee787}@media(prefers-reduced-motion:reduce){.ascii-row{clip-path:none}}</style>',
-        '<rect x=".5" y=".5" width="369" height="389" rx="12" fill="#0d1117" stroke="#30363d"/>',
+        starfield(370,390,'portrait'),
         '<text x="22" y="27" fill="#8b949e" font-size="11">$ cat portrait.txt</text><path d="M1 43h368" stroke="#21262d"/>','<defs>']
     for y in range(59):
         a,b = y*.013, y*.013+.12
