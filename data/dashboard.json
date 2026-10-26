@@ -1,0 +1,14 @@
+{
+  "name": "Subhajit Talukder",
+  "role": "Software Development Engineer",
+  "focus": "Backend · Full Stack · AI",
+  "education": "B.Tech Computer Engineering · JAIN University · 2027",
+  "portfolio": "https://subhajitdeveloper24.vercel.app/",
+  "email": "subhajittalukder24@gmail.com",
+  "projects": [
+    {"id":"nexio","name":"NEXIO","category":"STUDENT COLLABORATION","description":["Find teammates. Discover projects.","Authentication, profiles and real-time messaging."],"tech":"React · Node.js · Express · PostgreSQL · WebSockets","highlight":"100+ active users","link":"https://www.thenexio.in/"},
+    {"id":"cointervues","name":"COINTERVUES","category":"AI INTERVIEWS & SKILL VERIFICATION","description":["Structured interview flows and finance modules.","AI-assisted validation, testing and CI/CD."],"tech":"TypeScript · Node.js · GitHub Actions · AI agents","highlight":"Co-Founder & CTO · 5 finance modules","link":""},
+    {"id":"cogniview","name":"COGNIVIEW","category":"CONVERSATIONAL AI","description":["OpenAI-powered conversations with structured memory.","Prompt regression tests for consistent responses."],"tech":"React · Node.js · MongoDB · OpenAI API","highlight":"95% context retention · 100 prompt tests","link":"https://github.com/Subhajit2407/Cogniview"},
+    {"id":"miles","name":"MILES","category":"DRIVING EDUCATION / GUWAHATI","description":["Driving education tailored to Guwahati, Assam.","Course discovery and an interactive driving journey."],"tech":"React · TypeScript · Vite · Tailwind CSS · Vitest","highlight":"Responsive, modular frontend · private source","link":""}
+  ]
+}

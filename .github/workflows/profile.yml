@@ -1,10 +1,14 @@
-name: Refresh animated profile
+name: Refresh engineering dashboard
 on:
   push:
     branches: [main]
     paths:
       - 'scripts/fetch_contributions.py'
       - 'scripts/render_heatmap_svg.py'
+      - 'scripts/generate_skyline.py'
+      - 'scripts/generate_dashboard.py'
+      - 'data/dashboard.json'
+      - 'data/tech-icons.json'
       - '.github/workflows/profile.yml'
   schedule:
     - cron: '30 1 * * *'
@@ -26,11 +30,15 @@ jobs:
         run: python3 scripts/fetch_contributions.py
       - name: Render animated contribution heatmap
         run: python3 scripts/render_heatmap_svg.py
+      - name: Generate dashboard panels and contribution skyline
+        run: |
+          python3 scripts/generate_dashboard.py
+          python3 scripts/generate_skyline.py
       - name: Commit refreshed public data and SVG
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/contributions.json contrib-heatmap.svg
+          git add data/contributions.json contrib-heatmap.svg assets/*.svg assets/projects/*.svg
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh animated contribution calendar [skip ci]'
           git pull --rebase origin main
