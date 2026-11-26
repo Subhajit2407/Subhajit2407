@@ -1,9 +1,9 @@
 {
   "username": "Subhajit2407",
   "source": "https://github.com/users/Subhajit2407/contributions",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "from": "2025-11-23",
-  "to": "2026-11-25",
+  "to": "2026-11-26",
   "days": [
     {
       "date": "2025-11-23",
@@ -1842,15 +1842,20 @@
     },
     {
       "date": "2026-11-25",
+      "level": 1,
+      "count": 2
+    },
+    {
+      "date": "2026-11-26",
       "level": 0,
       "count": 0
     }
   ],
   "stats": {
-    "total": 459,
-    "current_streak": 0,
+    "total": 461,
+    "current_streak": 1,
     "longest_streak": 6,
-    "active_days": 79,
+    "active_days": 80,
     "best_day": {
       "date": "2026-04-23",
       "count": 25
@@ -1868,7 +1873,7 @@
       "2026-08": 37,
       "2026-09": 92,
       "2026-10": 40,
-      "2026-11": 7
+      "2026-11": 9
     }
   }
 }
